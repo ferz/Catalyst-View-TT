@@ -17,6 +17,7 @@ __PACKAGE__->config(
         POST_CHOMP         => 1,
         TEMPLATE_EXTENSION => '.tt',
         render_die         => 1,
+	ENCODING           => 'utf-8',
     },
 );
 
