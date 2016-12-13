@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>[% content %]</title>
+</head>
+<body>
+  <p>
+  From controller: [% content %]<br>
+  Inline in template: àèéìòù
+  </p>
+</body>
+</html>

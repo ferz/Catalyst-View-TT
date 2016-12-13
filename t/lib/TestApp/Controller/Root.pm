@@ -1,5 +1,6 @@
 package TestApp::Controller::Root;
 use base 'Catalyst::Controller';
+use utf8;
 __PACKAGE__->config(namespace => '');
 
 sub default : Private {
@@ -57,6 +58,12 @@ sub test_alt_content_type : Local {
     my ($self, $c) = @_;
     $c->stash( message => 'test_alt_content_type');
     $c->forward('View::TT::AltContentType');
+}
+
+sub test_double_encoding : Local {
+    my ($self, $c) = @_;
+    $c->stash(content=>"àèéìòù");
+    $c->stash(template=>'double_encoding.tt');
 }
 
 sub end : Private {
