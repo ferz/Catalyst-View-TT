@@ -10,6 +10,7 @@ use_ok('Catalyst::Test', 'TestApp');
 
 my $response;
 ok(($response = request("/test_double_encoding"))->is_success, 'request ok');
-like($response->content, qr/àèéìòù/, 'message ok');
+ok(3 == ($response->content =~ /àèéìòù/g), "matches 3 times");
+diag("Something is wrong about this: " . $response->content);
 
 exit;
